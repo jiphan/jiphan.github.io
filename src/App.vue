@@ -8,18 +8,15 @@
     @del-row="delRow(r.id)"
     @bold-row="boldRow(r.id)"
   class="comp"> {{r}} </Item>
-  <HelloWorld class="comp" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Item from './components/comp.vue'
 import postItem from './components/postItem.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     Item,
     postItem
   },
@@ -38,8 +35,6 @@ export default {
   },
   data() {
     return {
-      tabs: tabs,
-      currentTab: tabs[0],
       rows: [
         {id: 0, msg: "item 1", bold: false}, 
         {id: 1, msg: "item 2", bold: false}, 
@@ -48,17 +43,6 @@ export default {
     }
   }
 }
-
-const tabs = [
-  {
-    name: "Home",
-    component: HelloWorld
-  },
-  {
-    name: "Content",
-    component: Item
-  }
-]
 </script>
 
 <style>

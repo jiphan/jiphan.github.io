@@ -22,7 +22,7 @@ export default {
   methods: {
     onPost() {
       if (!this.content) return
-      console.log('post', ++this.postCount)
+      // console.log('post', ++this.postCount)
       this.$emit('add-row', {
         id: this.postCount,
         msg: this.content,
