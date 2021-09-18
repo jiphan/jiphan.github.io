@@ -1,6 +1,6 @@
 <template>
     <div :class="post.bold ? 'emphasis' : ''" class="show">
-        <span>{{post.msg}}</span>
+        <span class="">{{post.msg}}</span>
         <span class="hide">
           <i class="fas fa-bold" @click="$emit('bold-row')"></i> 
           <i class="far fa-copy" @click="copyTC(post.msg)"></i> 
@@ -28,15 +28,19 @@ div {
   display: flex;
   justify-content: space-between;
   font: 14px sans-serif;
+  text-decoration: none;
 }
 .emphasis {
   font-weight: bold;
 }
 i {
   padding: 0px 5px;
+  cursor: pointer;
 }
 span {
-  white-space:nowrap;
+  overflow-wrap: break-word;
+  max-width: 80%;
+  text-align: left;
 }
 span.hide {
   display: none;

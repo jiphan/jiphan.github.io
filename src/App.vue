@@ -75,7 +75,7 @@ const tabs = [
   margin: 1rem auto;
   padding: 1rem;
   box-shadow: 0 2px 4px 0 rgba(24, 20, 20, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  max-width: 480px;
 }
 body {
   -ms-overflow-style: none;  /* IE and Edge */
