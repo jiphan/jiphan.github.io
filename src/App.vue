@@ -21,8 +21,9 @@ export default {
     postItem
   },
   methods: {
-    delRow(i) {
-      this.rows = this.rows.filter(row => row.id !== i)
+    delRow(post) {
+      if (post.bold) return
+      this.rows = this.rows.filter(row => row.id !== post.id)
     },
     boldRow(i) {
       this.rows.map((row) => {
