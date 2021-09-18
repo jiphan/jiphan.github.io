@@ -4,7 +4,7 @@
         <span class="hide">
           <i class="fas fa-bold" @click="$emit('bold-row')"></i> 
           <i class="far fa-copy" @click="copyTC(post.msg)"></i> 
-          <i class="fas fa-times" @click="$emit('del-row')"></i> 
+          <i class="fas fa-times" @click="$emit('del-row', post.id)"></i> 
         </span>
     </div>
 </template>

@@ -24,7 +24,7 @@ export default {
       if (!this.content) return
       // console.log('post', ++this.postCount)
       this.$emit('add-row', {
-        id: this.postCount,
+        id: ++this.postCount,
         msg: this.content,
         bold: false
       })

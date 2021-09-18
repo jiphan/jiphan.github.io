@@ -2,16 +2,16 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <postItem class="comp" @add-row="addRow"/>
   <Item 
-    v-for="r in rows"
+    v-for="r in rows.slice().reverse()"
     :key="r.id"
     :post="r"
-    @del-row="delRow(r.id)"
+    @del-row="delRow"
     @bold-row="boldRow(r.id)"
   class="comp"> {{r}} </Item>
 </template>
 
 <script>
-import Item from './components/comp.vue'
+import Item from './components/item.vue'
 import postItem from './components/postItem.vue'
 
 export default {
