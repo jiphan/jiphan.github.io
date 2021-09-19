@@ -26,14 +26,21 @@ export default {
     delRow(post) {
       if (post.bold) return;
       this.rows = this.rows.filter((row) => row.id !== post.id);
+      this.saveRows();
     },
     boldRow(i) {
       this.rows.map((row) => {
         if (row.id === i) row.bold = !row.bold;
       });
+      this.saveRows();
     },
     addRow(row) {
       this.rows = [...this.rows, row];
+      this.saveRows();
+    },
+    saveRows() {
+      const parsed = JSON.stringify(this.rows);
+      localStorage.setItem("rows", parsed);
     },
   },
   data() {
@@ -44,6 +51,11 @@ export default {
         { id: 2, msg: "item 3", bold: false },
       ],
     };
+  },
+  mounted() {
+    if (localStorage.getItem("rows")) {
+      this.rows = JSON.parse(localStorage.getItem("rows"));
+    }
   },
 };
 </script>
