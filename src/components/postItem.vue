@@ -42,6 +42,7 @@ export default {
 <style scoped>
 div {
     display: flex;
+    user-select: none;
 }
 .field {
   width: 100%;
