@@ -12,7 +12,7 @@
 
 ## About
 
-- links here
+- links to here
 
 # [vue branch](https://github.com/jiphan/jiphan.github.io/tree/vue)
 
