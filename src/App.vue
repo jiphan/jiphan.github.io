@@ -1,5 +1,4 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <postItem class="comp" @add-row="addRow"/>
   <Item 
     v-for="r in rows.slice().reverse()"
