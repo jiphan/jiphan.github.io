@@ -1,22 +1,27 @@
 <template>
-  <postItem class="comp" @add-row="addRow" />
-  <tradingview />
+  <postItem @preview="sendPreview" class="comp" />
+  <imagePreview v-bind:preview="preview" class="comp" />
 </template>
 
 <script>
 import postItem from "@/components/postItem.vue"
-import tradingview from "@/components/tradingview.vue"
+import imagePreview from "@/components/imagePreview.vue"
 export default {
   name: "Dev",
   components: {
     postItem,
-    tradingview
+    imagePreview,
   },
   methods: {
-    addRow() {
-      console.log("added")
-    },
+    sendPreview() {
+      console.log('hi')
+    }
   },
+  data() {
+    return {
+      preview: []
+    }
+  }
 };
 </script>
 

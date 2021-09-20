@@ -39,9 +39,14 @@ export default {
     dragFile(e) {
       let arr = []
       if (e.dataTransfer.getData("text")) {
-        arr = handleText(e.dataTransfer.getData("text"))
+        arr = this.handleText(e.dataTransfer.getData("text"))
       } else if (e.dataTransfer.files) {
         arr = Array.from(e.dataTransfer.files).map((i) => {
+          const reader = new FileReader()
+          reader.onload = () => {
+            this.preview.push(reader.result)
+          }
+          reader.readAsDataURL(i)
           return {
             id: v4(),
             msg: i.name,
@@ -50,6 +55,7 @@ export default {
         })
       }
       this.$emit("add-row-bulk", arr)
+      this.$emit("preview", this.preview)
     },
     handleText(text) {
       return text
@@ -64,11 +70,15 @@ export default {
           }
         })
     },
+    previewImage(data) {  
+      console.log(data)
+    }
   },
   data() {
     return {
       content: "",
       file: [],
+      preview: [],
     }
   },
 }
