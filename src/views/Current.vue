@@ -33,7 +33,6 @@ export default {
 		},
 		savePreviews() {
 			const parsed = JSON.stringify(this.parentPreview)
-			console.log(parsed)
 			localStorage.setItem("preview", parsed)
 		},
 	},
