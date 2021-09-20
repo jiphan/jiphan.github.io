@@ -7,12 +7,13 @@
 ## Todos
 
 - write and remove tasks
+- drag and drop multiple lines of text or filenames
 - uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
 
 ## ImagePreview
 
 - drag and drop images onto New Post
-- click to delete individual images or clear
+- click to delete individual images or clear with button
 - uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
 
 ## About
