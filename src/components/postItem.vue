@@ -70,8 +70,8 @@ export default {
           }
         })
     },
-    previewImage(data) {  
-      console.log(data)
+    clearPreviews() {
+      this.preview = []
     }
   },
   data() {
