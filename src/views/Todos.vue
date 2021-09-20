@@ -1,5 +1,5 @@
 <template>
-  <postItem class="comp" @add-row="addRow" />
+  <postItem class="comp" @add-row-bulk="addRowBulk" />
   <Item
     v-for="r in rows.slice().reverse()"
     :key="r.id"
@@ -34,8 +34,8 @@ export default {
       });
       this.saveRows();
     },
-    addRow(row) {
-      this.rows = [...this.rows, row];
+    addRowBulk(rows) {
+      this.rows = [...this.rows, ...rows];
       this.saveRows();
     },
     saveRows() {

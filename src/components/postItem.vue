@@ -1,48 +1,80 @@
 <template>
-      <div>
-        <input 
-          type="text" 
-          placeholder="New Post" 
-          v-model="content" 
-          class="field" 
-          @keydown.enter="onPost" />
-        <button 
-          :disabled="content.length == 0" 
-          @click="onPost" 
-          style="outline: none;"> Post </button>
-      </div>
+  <div @dragover.prevent @drop.prevent @drop="dragFile">
+    <input
+      type="text"
+      placeholder="New Post"
+      v-model="content"
+      class="field"
+      @keydown.enter="onPost"
+    />
+    <button
+      :disabled="content.length == 0"
+      @click="onPost"
+      style="outline: none"
+    >
+      Post
+    </button>
+  </div>
 </template>
 
 <script>
+import { v4 } from "uuid";
 export default {
-  name: 'postItem',
+  name: "postItem",
   props: {
-    msg: String
+    msg: String,
   },
   methods: {
     onPost() {
-      if (!this.content) return
-      // console.log('post', ++this.postCount)
-      this.$emit('add-row', {
-        id: ++this.postCount,
-        msg: this.content,
-        bold: false
-      })
-      this.content = ''
-    }
+      if (!this.content) return;
+      this.$emit("add-row-bulk", [
+        {
+          id: v4(),
+          msg: this.content,
+          bold: false,
+        },
+      ]);
+      this.content = "";
+    },
+    dragFile(e) {
+      let arr = [];
+      if (e.dataTransfer.getData("text")) {
+        arr = e.dataTransfer
+          .getData("text")
+          .replace('\r', '')
+          .split("\n")
+          .filter((i) => i.length > 0)
+          .map((i) => {
+            return {
+              id: v4(),
+              msg: i,
+              bold: false,
+            };
+          });
+      } else if (e.dataTransfer.files) {
+        arr = Array.from(e.dataTransfer.files).map((i) => {
+          return {
+            id: v4(),
+            msg: `${i.name} ${i.type}`,
+            bold: false,
+          };
+        });
+      }
+      this.$emit("add-row-bulk", arr);
+    },
   },
   data() {
-      return {
-          content: '',
-          postCount: 3
-      }
-  }
-}
+    return {
+      content: "",
+      file: [],
+    };
+  },
+};
 </script>
 <style scoped>
 div {
-    display: flex;
-    user-select: none;
+  display: flex;
+  user-select: none;
 }
 .field {
   width: 100%;
@@ -52,7 +84,7 @@ div {
   border: 1px solid Gainsboro;
   font: 14px sans-serif;
   outline: none;
-  transition: color .25s, border-color .25s;
+  transition: color 0.25s, border-color 0.25s;
 }
 .field:focus {
   border-color: rgb(129, 162, 190) !important;
@@ -61,5 +93,4 @@ textarea.field {
   min-height: 6em;
   resize: none;
 }
-
 </style>
