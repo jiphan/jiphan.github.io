@@ -8,11 +8,6 @@
 
 <script>
 export default {
-  methods: {
-    refresh(name) {
-      console.log(name)
-    },
-  },
   mounted() {
     let tradingviewScript = document.createElement("script")
     tradingviewScript.setAttribute("src", "https://s3.tradingview.com/tv.js")
@@ -33,7 +28,7 @@ export default {
         allow_symbol_change: true,
         container_id: "tradingview_53906",
       })
-    }, 1000)
+    }, 100)
   },
 };
 </script>
