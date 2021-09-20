@@ -1,12 +1,15 @@
 <template>
-    <div :class="post.bold ? 'emphasis' : ''" class="show">
-        <span class="">{{post.msg}}</span>
-        <span class="hide">
-          <i class="fas fa-bold" @click="$emit('bold-row')"/>
-          <i class="far fa-copy" @click="copyTC(post.msg)"/>
-          <i :class="post.bold ? 'fas fa-lock' : 'fas fa-times'" @click="$emit('del-row', post)"/>
-        </span>
-    </div>
+  <div :class="post.bold ? 'emphasis' : ''" class="show">
+    <span class="">{{ post.msg }}</span>
+    <span class="hide">
+      <i class="fas fa-bold" @click="$emit('bold-row')" />
+      <i class="far fa-copy" @click="copyTC(post.msg)" />
+      <i
+        :class="post.bold ? 'fas fa-lock' : 'fas fa-times'"
+        @click="$emit('del-row', post)"
+      />
+    </span>
+  </div>
 </template>
 
 <script>
@@ -17,7 +20,7 @@ export default {
   },
   methods: {
     copyTC(text) {
-      navigator.clipboard.writeText(text);
+      navigator.clipboard.writeText(text)
     }
   }
 }

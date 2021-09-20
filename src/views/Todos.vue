@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Item from "@/components/item.vue";
-import postItem from "@/components/postItem.vue";
+import Item from "@/components/item.vue"
+import postItem from "@/components/postItem.vue"
 
 export default {
   name: "Todos",
@@ -24,23 +24,23 @@ export default {
   },
   methods: {
     delRow(post) {
-      if (post.bold) return;
-      this.rows = this.rows.filter((row) => row.id !== post.id);
-      this.saveRows();
+      if (post.bold) return
+      this.rows = this.rows.filter((row) => row.id !== post.id)
+      this.saveRows()
     },
     boldRow(i) {
       this.rows.map((row) => {
-        if (row.id === i) row.bold = !row.bold;
-      });
-      this.saveRows();
+        if (row.id === i) row.bold = !row.bold
+      })
+      this.saveRows()
     },
     addRowBulk(rows) {
-      this.rows = [...this.rows, ...rows];
-      this.saveRows();
+      this.rows = [...this.rows, ...rows]
+      this.saveRows()
     },
     saveRows() {
-      const parsed = JSON.stringify(this.rows);
-      localStorage.setItem("rows", parsed);
+      const parsed = JSON.stringify(this.rows)
+      localStorage.setItem("rows", parsed)
     },
   },
   data() {
@@ -50,11 +50,11 @@ export default {
         { id: 1, msg: "item 2", bold: false },
         { id: 2, msg: "item 3", bold: false },
       ],
-    };
+    }
   },
   mounted() {
     if (localStorage.getItem("rows")) {
-      this.rows = JSON.parse(localStorage.getItem("rows"));
+      this.rows = JSON.parse(localStorage.getItem("rows"))
     }
   },
 };

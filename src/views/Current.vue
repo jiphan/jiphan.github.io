@@ -1,11 +1,11 @@
 <template>
   <postItem class="comp" @add-row="addRow" />
-  <tradingview/>
+  <tradingview />
 </template>
 
 <script>
-import postItem from "@/components/postItem.vue";
-import tradingview from "@/components/tradingview.vue";
+import postItem from "@/components/postItem.vue"
+import tradingview from "@/components/tradingview.vue"
 export default {
   name: "Dev",
   components: {
@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     addRow() {
-      console.log("added");
+      console.log("added")
     },
   },
 };

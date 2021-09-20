@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { v4 } from "uuid";
+import { v4 } from "uuid"
 export default {
   name: "postItem",
   props: {
@@ -26,50 +26,52 @@ export default {
   },
   methods: {
     onPost() {
-      if (!this.content) return;
+      if (!this.content) return
       this.$emit("add-row-bulk", [
         {
           id: v4(),
           msg: this.content,
           bold: false,
         },
-      ]);
-      this.content = "";
+      ])
+      this.content = ""
     },
     dragFile(e) {
-      let arr = [];
+      let arr = []
       if (e.dataTransfer.getData("text")) {
-        arr = e.dataTransfer
-          .getData("text")
-          .replace('\r', '')
-          .split("\n")
-          .filter((i) => i.length > 0)
-          .map((i) => {
-            return {
-              id: v4(),
-              msg: i,
-              bold: false,
-            };
-          });
+        arr = handleText(e.dataTransfer.getData("text"))
       } else if (e.dataTransfer.files) {
         arr = Array.from(e.dataTransfer.files).map((i) => {
           return {
             id: v4(),
-            msg: `${i.name} ${i.type}`,
+            msg: i.name,
             bold: false,
-          };
-        });
+          }
+        })
       }
-      this.$emit("add-row-bulk", arr);
+      this.$emit("add-row-bulk", arr)
+    },
+    handleText(text) {
+      return text
+        .replace("\r", "")
+        .split("\n")
+        .filter((i) => i.length > 0)
+        .map((i) => {
+          return {
+            id: v4(),
+            msg: i,
+            bold: false,
+          }
+        })
     },
   },
   data() {
     return {
       content: "",
       file: [],
-    };
+    }
   },
-};
+}
 </script>
 <style scoped>
 div {

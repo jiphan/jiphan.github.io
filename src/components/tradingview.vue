@@ -14,9 +14,9 @@ export default {
     },
   },
   mounted() {
-    let tradingviewScript = document.createElement("script");
-    tradingviewScript.setAttribute("src", "https://s3.tradingview.com/tv.js");
-    document.head.appendChild(tradingviewScript);
+    let tradingviewScript = document.createElement("script")
+    tradingviewScript.setAttribute("src", "https://s3.tradingview.com/tv.js")
+    document.head.appendChild(tradingviewScript)
 
     setTimeout(function () {
       new window.TradingView.widget({
@@ -32,8 +32,8 @@ export default {
         enable_publishing: false,
         allow_symbol_change: true,
         container_id: "tradingview_53906",
-      });
-    }, 1000);
+      })
+    }, 1000)
   },
 };
 </script>
