@@ -8,7 +8,12 @@
 
 - write and remove tasks
 - uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
-- can be reset by clearing cookies
+
+## ImagePreview
+
+- drag and drop images onto New Post
+- click to delete individual images or clear
+- uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
 
 ## About
 
