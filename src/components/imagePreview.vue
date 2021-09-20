@@ -2,7 +2,7 @@
 	<div>
 		<button @click="$emit('clear-preview')">Clear</button>
 		<div>
-			<img v-for="s in preview" :key="s" :src="s" />
+			<img v-for="s in preview" :key="s.key" :src="s.data" @click="$emit('clear-item', s.key)"/>
 		</div>
 	</div>
 </template>
@@ -17,9 +17,9 @@ export default {
 
 <style scoped>
 img {
-	width: 33%;
+	width: 30%;
 	height: 160px;
 	object-fit: cover;
-	margin: 1px 0px;
+	margin: 1px;
 }
 </style>

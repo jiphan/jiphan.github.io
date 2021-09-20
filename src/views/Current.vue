@@ -4,6 +4,7 @@
 		v-show="parentPreview.length > 0"
 		v-bind:preview="parentPreview"
 		@clear-preview="clearPreviews"
+    @clear-item="clearItem"
 		class="comp"
 	/>
 </template>
@@ -19,12 +20,14 @@ export default {
 	},
 	methods: {
 		receivePreview(data) {
-      console.log(data)
-			this.parentPreview = data
+      // if (this.parentPreview.includes(data)) return
+			this.parentPreview = [...this.parentPreview, data]
 		},
     clearPreviews() {
       this.parentPreview = []
-      this.$refs.postItem.clearPreviews()
+    },
+    clearItem(id) {
+      this.parentPreview = this.parentPreview.filter(i => i.key !== id)
     }
 	},
 	data() {
