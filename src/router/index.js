@@ -20,6 +20,14 @@ const routes = [
     }
   },
   {
+    path: '/imagepreview',
+    name: 'ImagePreview',
+    component: () => import(/* webpackChunkName: "imagepreview" */ '../views/ImagePreview.vue'),
+    meta: {
+      title: 'ImagePreview'
+    }
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
