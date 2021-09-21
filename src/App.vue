@@ -2,7 +2,8 @@
 	<div id="nav">
 		<router-link to="/">Home</router-link> |
 		<router-link to="/todos">Todos</router-link> |
-		<router-link to="/imagepreview">ImagePreview</router-link> |
+		<router-link to="/images">Images</router-link> |
+		<router-link to="/controller">Controller</router-link> |
 		<a href="https://github.com/jiphan/jiphan.github.io" target="_blank"
 			>About</a
 		>

@@ -20,11 +20,19 @@ const routes = [
     }
   },
   {
-    path: '/imagepreview',
-    name: 'ImagePreview',
-    component: () => import(/* webpackChunkName: "imagepreview" */ '../views/ImagePreview.vue'),
+    path: '/images',
+    name: 'Images',
+    component: () => import(/* webpackChunkName: "images" */ '../views/Images.vue'),
     meta: {
-      title: 'ImagePreview'
+      title: 'Images'
+    }
+  },
+  {
+    path: '/controller',
+    name: 'Controller',
+    component: () => import(/* webpackChunkName: "controller" */ '../views/Controller.vue'),
+    meta: {
+      title: 'Controller'
     }
   },
   {
