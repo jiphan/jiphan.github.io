@@ -10,11 +10,16 @@
 - drag and drop multiple lines of text or filenames
 - uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
 
-## ImagePreview
+## Images
 
 - drag and drop images onto New Post
 - click to delete individual images or clear with button
 - uses [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to persist data in browser
+
+## Controller
+
+- connect controller to view inputs
+- highlights on button press or trigger/stick max out
 
 ## About
 
