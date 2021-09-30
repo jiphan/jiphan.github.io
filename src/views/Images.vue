@@ -1,5 +1,10 @@
 <template>
-	<postItem ref="postItem" @preview="receivePreview" class="comp" />
+	<postItem
+		ref="postItem"
+		@preview="receivePreview"
+		class="comp"
+		msg="Drag image here"
+	/>
 	<imagePreview
 		v-show="parentPreview.length > 0"
 		v-bind:preview="parentPreview"
@@ -41,10 +46,10 @@ export default {
 			parentPreview: []
 		}
 	},
-  mounted() {
-    if (localStorage.getItem("preview")) {
-      this.parentPreview = JSON.parse(localStorage.getItem("preview"))
-    }
-  },
+	mounted() {
+		if (localStorage.getItem("preview")) {
+			this.parentPreview = JSON.parse(localStorage.getItem("preview"))
+		}
+	},
 };
 </script>

@@ -2,7 +2,7 @@
 	<div @dragover.prevent @drop.prevent @drop="dragFile">
 		<input
 			type="text"
-			placeholder="New Post"
+			:placeholder="msg"
 			v-model="content"
 			class="field"
 			@keydown.enter="onPost"
