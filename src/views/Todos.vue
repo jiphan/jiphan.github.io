@@ -1,12 +1,11 @@
 <template>
-	<postItems msg="New Post" itemType="item"></postItems>
+	<postItems msg="New todo" itemType="item"></postItems>
 </template>
 
 <script>
 import postItems from "@/components/postItems.vue"
 
 export default {
-	name: "Todos",
 	components: {
 		postItems
 	},

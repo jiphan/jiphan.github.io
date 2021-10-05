@@ -6,7 +6,6 @@
 import postItems from "@/components/postItems.vue"
 
 export default {
-	name: "Todos",
 	components: {
 		postItems
 	},
