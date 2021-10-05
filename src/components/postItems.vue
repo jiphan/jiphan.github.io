@@ -47,8 +47,16 @@ export default {
 				this.rows = []
 
 				let subreddit = rows[0].msg.split('/').pop()
-				let res = await axios.get(`https://3.20.90.30:3000/api/reddit/${subreddit}`)
-				this.rows = [...res.data]
+				let res = await axios.get(`https://www.reddit.com/r/${subreddit}.json?limit=10`)
+				this.rows = [...res.data.data.children.map(i => {
+					return {
+						title: i.data.title,
+						id: i.data.id,
+						score: i.data.score,
+						timestamp: i.data.created,
+						upvote_ratio: i.data.upvote_ratio,
+					}
+				}).reverse()]
 			}
 		},
 		saveRows() {

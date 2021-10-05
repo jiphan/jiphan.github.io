@@ -2,7 +2,7 @@
 	<div v-bind:class="{ emphasis: post.bold }" class="show">
 		<span>
 			<a :href="`http://reddit.com/${post.id}`" target="_blank">
-				{{ post.title }}
+				{{ post.title }} ({{ (post.score / 1000).toFixed(1) }}k)
 			</a></span
 		>
 		<span class="hide">
@@ -51,5 +51,22 @@ span.hide {
 }
 .show:hover .hide {
 	display: inline;
+}
+a:link {
+	text-decoration: none;
+	color: #258e70;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
 }
 </style>
