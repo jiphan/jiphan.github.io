@@ -1,0 +1,55 @@
+<template>
+	<div v-bind:class="{ emphasis: post.bold }" class="show">
+		<span>
+			<a :href="`http://reddit.com/${post.id}`" target="_blank">
+				{{ post.title }}
+			</a></span
+		>
+		<span class="hide">
+			<i
+				:class="post.bold ? 'fas fa-lock' : 'fas fa-times'"
+				@click="$emit('del-row', post)"
+			/>
+		</span>
+	</div>
+</template>
+
+<script>
+export default {
+	props: {
+		post: Object
+	},
+	methods: {
+		copyTC(text) {
+			navigator.clipboard.writeText(text)
+		}
+	}
+}
+</script>
+
+<style scoped>
+div {
+	display: flex;
+	justify-content: space-between;
+	font: 14px sans-serif;
+	text-decoration: none;
+}
+.emphasis {
+	font-weight: bold;
+}
+i {
+	padding: 0px 5px;
+	cursor: pointer;
+}
+span {
+	overflow-wrap: break-word;
+	max-width: 80%;
+	text-align: left;
+}
+span.hide {
+	display: none;
+}
+.show:hover .hide {
+	display: inline;
+}
+</style>

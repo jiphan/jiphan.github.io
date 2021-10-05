@@ -20,6 +20,14 @@ const routes = [
     }
   },
   {
+    path: '/reddit',
+    name: 'Reddit',
+    component: () => import(/* webpackChunkName: "todo" */ '../views/Reddit.vue'),
+    meta: {
+      title: 'Reddit'
+    }
+  },
+  {
     path: '/images',
     name: 'Images',
     component: () => import(/* webpackChunkName: "images" */ '../views/Images.vue'),
