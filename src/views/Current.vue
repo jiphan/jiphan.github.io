@@ -1,12 +1,14 @@
 <template>
-	<controller />
+	<postItems msg="Enter subreddit here" itemType="redditpost"></postItems>
 </template>
 
 <script>
-import Controller from '../components/controller.vue'
+import postItems from "@/components/postItems.vue"
+
 export default {
+	name: "Todos",
 	components: {
-		Controller,
-	}
-}
+		postItems
+	},
+};
 </script>

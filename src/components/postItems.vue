@@ -47,7 +47,7 @@ export default {
 				this.rows = []
 
 				let subreddit = rows[0].msg.split('/').pop()
-				let res = await axios.get(`/v1/api/reddit/${subreddit}`)
+				let res = await axios.get(`https://3.20.90.30:3000/api/reddit/${subreddit}`)
 				this.rows = [...res.data]
 			}
 		},
@@ -76,6 +76,9 @@ export default {
 		window.addEventListener('keyup', e => {
 			if (!e.shiftKey) this.shift = false
 		})
+		if (this.itemType == 'redditpost') {
+			this.rows = []
+		}
 	},
 };
 </script>
