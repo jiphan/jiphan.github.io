@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(t,n,e){"use strict";e.r(n);var a=e("7a23"),c=Object(a["f"])("h3",null,"This is an about page",-1),i=Object(a["f"])("div",{class:"comp"},[Object(a["f"])("a",{href:"https://github.com/jiphan/jiphan.github.io"},"github")],-1);function u(t,n){return Object(a["r"])(),Object(a["e"])(a["a"],null,[c,i],64)}const b={};b.render=u;n["default"]=b}}]);
+//# sourceMappingURL=about.00fddb26.js.map
