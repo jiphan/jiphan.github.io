@@ -1,6 +1,6 @@
 <template>
-	<postItem
-		ref="postItem"
+	<postForm
+		ref="postForm"
 		@preview="receivePreview"
 		class="comp"
 		msg="Drag image here"
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import postItem from "@/components/postItem.vue"
+import postForm from "@/components/postForm.vue"
 import imagePreview from "@/components/imagePreview.vue"
 export default {
 	name: "Dev",
 	components: {
-		postItem,
+		postForm,
 		imagePreview,
 	},
 	methods: {

@@ -1,5 +1,5 @@
 <template>
-	<postItems msg="New Post" itemType="item"></postItems>
+	<postItems msg="Enter subreddit here" itemType="redditpost"></postItems>
 </template>
 
 <script>
