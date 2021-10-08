@@ -3,6 +3,7 @@
 ## Home
 
 - current experiment
+- enter a subreddit name, eg /food, and receive top 10 posts
 
 ## Todos
 
